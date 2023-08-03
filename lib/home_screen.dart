@@ -9,57 +9,24 @@ class HomeScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         const Text(
-          "\$2589.90",
+          "\$30000.00",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontSize: 36,
             fontWeight: FontWeight.w700,
           ),
         ),
-        Row(
-          children: <Widget>[
-            Icon(
-              Icons.notifications,
-              color: Colors.lightBlue[100],
+        CircleAvatar(
+          radius: 25,
+          backgroundColor: Colors.white,
+          child: ClipOval(
+            child: Image.network(
+              'https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+              fit: BoxFit.cover,
+              height: 50,
             ),
-            const SizedBox(width: 16),
-            CircleAvatar(
-              radius: 25,
-              backgroundColor: Colors.white,
-              child: ClipOval(
-                child: Image.network(
-                  'https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-                  fit: BoxFit.cover,
-                  height: 50,
-                ),
-              ),
-            )
-          ],
+          ),
         )
-      ],
-    );
-  }
-
-  Widget buildOption(String label, IconData icon, Color color) {
-    return Column(
-      children: <Widget>[
-        Container(
-          decoration: const BoxDecoration(
-            color: Color.fromRGBO(243, 245, 248, 1),
-            borderRadius: BorderRadius.all(Radius.circular(18)),
-          ),
-          padding: const EdgeInsets.all(12),
-          child: Icon(icon, color: color, size: 30),
-        ),
-        const SizedBox(height: 4),
-        Text(
-          label,
-          style: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: 14,
-            color: Colors.blue[100],
-          ),
-        ),
       ],
     );
   }
@@ -67,7 +34,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text(
+          'Transactions',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: Colors.deepPurpleAccent,
+      ),
       body: Stack(
         children: <Widget>[
           Container(
