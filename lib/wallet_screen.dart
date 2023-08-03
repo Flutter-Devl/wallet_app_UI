@@ -14,7 +14,7 @@ class WalletScreen extends StatefulWidget {
 class _WalletScreenState extends State<WalletScreen> {
   var screens = [
     const HomeScreen(),
-    CardScreen(),
+    const CardScreen(),
   ];
 
   int selectedTab = 0;
@@ -36,12 +36,6 @@ class _WalletScreenState extends State<WalletScreen> {
         showUnselectedLabels: true,
         iconSize: 30,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        elevation: 0,
-        child: const Icon(Icons.add),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: screens[selectedTab],
     );
   }
